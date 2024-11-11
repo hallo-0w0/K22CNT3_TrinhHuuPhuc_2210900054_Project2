@@ -1,0 +1,141 @@
+﻿@model K22CNT3_THP_2210900054_Project2.Models.VIDEO
+
+@{
+    ViewBag.Title = "Tạo Video Mới";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">Tạo Video Mới</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Thông Tin Video</h4>
+            </div>
+            <div class="card-body">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.tieu_de, "Tiêu đề", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.tieu_de, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập tiêu đề video" } })
+                        @Html.ValidationMessageFor(model => model.tieu_de, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.mo_ta, "Mô tả", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.mo_ta, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập mô tả video", @rows = 3 } })
+                        @Html.ValidationMessageFor(model => model.mo_ta, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.duong_dan, "Đường dẫn", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.duong_dan, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập đường dẫn video" } })
+                        @Html.ValidationMessageFor(model => model.duong_dan, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.hinh_anh, "Hình ảnh", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.hinh_anh, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập hình ảnh đại diện" } })
+                        @Html.ValidationMessageFor(model => model.hinh_anh, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.the_loai, "Thể loại", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.the_loai, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập thể loại" } })
+                        @Html.ValidationMessageFor(model => model.the_loai, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ngay_tao, "Ngày tạo", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.ngay_tao, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                        @Html.ValidationMessageFor(model => model.ngay_tao, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ma_quan_tri, "Mã quản trị", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.DropDownList("ma_quan_tri", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ma_quan_tri, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <!-- Trạng thái -->
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.trang_thai, "Trạng thái", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.trang_thai, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập trạng thái video" } })
+                        @Html.ValidationMessageFor(model => model.trang_thai, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <input type="submit" value="Tạo Mới" class="btn btn-primary" style="border-radius: 25px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="mt-3">
+        @Html.ActionLink("Trở Về Danh Sách", "Index", null, new { @class = "btn btn-outline-secondary" })
+    </div>
+</div>
+
+<style>
+    .card {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .form-control {
+        border-radius: 25px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+
+    h2 {
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-1px);
+        }
+
+    .btn-outline-secondary {
+        border-color: #6c757d;
+        color: #6c757d;
+    }
+
+        .btn-outline-secondary:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+</style>

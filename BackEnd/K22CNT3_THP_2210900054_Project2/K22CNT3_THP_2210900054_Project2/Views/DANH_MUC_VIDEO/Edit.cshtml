@@ -1,0 +1,87 @@
+﻿@model K22CNT3_THP_2210900054_Project2.Models.DANH_MUC_VIDEO
+
+@{
+    ViewBag.Title = "Chỉnh Sửa Thể Loại Video";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">Chỉnh Sửa Thể Loại Video</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Thông Tin Thể Loại Video</h4>
+            </div>
+            <div class="card-body">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.ma_danh_muc)
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ten_danh_muc, "Tên Danh Mục", htmlAttributes: new { @class = "col-md-3 col-form-label" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.ten_danh_muc, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập tên danh mục", style = "border-radius: 25px;" } })
+                        @Html.ValidationMessageFor(model => model.ten_danh_muc, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.mo_ta, "Mô Tả", htmlAttributes: new { @class = "col-md-3 col-form-label" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.mo_ta, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập mô tả", style = "border-radius: 25px;" } })
+                        @Html.ValidationMessageFor(model => model.mo_ta, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer text-right">
+                <button type="submit" class="btn btn-primary btn-lg" style="border-radius: 25px;">Lưu Thay Đổi</button>
+                <a href="@Url.Action("Index", "DANH_MUC_VIDEO")" class="btn btn-outline-secondary btn-lg" style="margin-left: 10px; border-radius: 25px;">
+                    <i class="fas fa-arrow-left"></i> Trở Về Danh Sách
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .card {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .form-control {
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+
+    h2 {
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn {
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-1px);
+        }
+
+    .btn-outline-secondary {
+        border-color: #6c757d;
+        color: #6c757d;
+    }
+
+        .btn-outline-secondary:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+</style>

@@ -1,0 +1,152 @@
+﻿@model IEnumerable<K22CNT3_THP_2210900054_Project2.Models.QUAN_TRI>
+
+@{
+    ViewBag.Title = "Quản Lý Tài Khoản Admin";
+}
+
+<h2 class="mb-4 text-center">Danh Sách Tài Khoản Admin</h2>
+
+<p>
+    @Html.ActionLink("Tạo Tài Khoản Mới", "Create", null, new { @class = "btn btn-success mb-3" })
+</p>
+
+<div class="input-group mb-3">
+    <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm tài khoản...">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="searchButton">Tìm</button>
+    </div>
+</div>
+
+<table class="table table-striped table-hover shadow-sm rounded">
+    <thead class="thead-light">
+        <tr>
+            <th>Tài Khoản</th>
+            <th>Mật Khẩu</th>
+            <th>Trạng Thái</th>
+            <th class="text-center" style="width: 200px;">Hành Động</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        @if (Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tai_khoan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mat_khau)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.trang_thai)
+                    </td>
+                    <td class="text-center">
+                        <div class="btn-group" role="group">
+                            <a href="@Url.Action("Edit", new { id = item.tai_khoan })" class="btn btn-warning btn-sm" style="margin-right: 5px;" title="Chỉnh sửa tài khoản" onclick="return confirm('Bạn có chắc chắn muốn chỉnh sửa?');">
+                                <i class="fas fa-edit"></i> Chỉnh Sửa
+                            </a>
+                            <a href="@Url.Action("Details", new { id = item.tai_khoan })" class="btn btn-info btn-sm" style="margin-right: 5px;" title="Xem chi tiết tài khoản">
+                                <i class="fas fa-info-circle"></i> Chi Tiết
+                            </a>
+                            <a href="@Url.Action("Delete", new { id = item.tai_khoan })" class="btn btn-danger btn-sm" title="Xóa tài khoản" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">
+                                <i class="fas fa-trash"></i> Xóa
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4" class="text-center">Không có tài khoản nào để hiển thị.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    // Tìm kiếm
+    document.getElementById('searchInput').addEventListener('keyup', function () {
+        var input = this.value.toLowerCase();
+        var rows = document.querySelectorAll('#tableBody tr');
+        rows.forEach(function (row) {
+            var text = row.innerText.toLowerCase();
+            row.style.display = text.includes(input) ? '' : 'none';
+        });
+    });
+</script>
+
+<style>
+    /* Tùy chỉnh CSS để cải thiện giao diện */
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h2 {
+        color: #343a40;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    .table {
+        border-radius: 0.5rem;
+        margin-top: 20px;
+        border: none; /* Bỏ border ngoài bảng */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho bảng */
+    }
+
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+            padding: 15px;
+            border: 1px solid #007bff; /* Border màu xanh dương */
+            border-radius: 0.25rem; /* Bo góc cho border */
+            background-color: #ffffff; /* Màu nền trắng cho ô */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển đổi */
+        }
+
+        .table th {
+            background-color: #007bff; /* Màu nền cho tiêu đề bảng */
+            color: white; /* Màu chữ tiêu đề */
+            font-weight: bold;
+        }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f2f2f2; /* Màu nền nhẹ cho hàng lẻ */
+    }
+
+    .table-hover tbody tr {
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Hiệu ứng mượt mà */
+    }
+
+        /* Thay đổi màu hiệu ứng hover ở đây */
+        .table-hover tbody tr:hover {
+            background-color: #81d4fa; /* Màu nền khi hover (xanh nhạt) */
+            color: #0d47a1; /* Màu chữ tối hơn khi hover */
+            transform: translateY(-2px); /* Hiệu ứng nổi lên khi hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng cho hàng khi hover */
+            border-left: 5px solid #007bff; /* Đường viền bên trái khi hover */
+        }
+
+    .btn-group .btn {
+        margin: 0 2px; /* Khoảng cách giữa các nút */
+    }
+
+    .btn-warning:hover {
+        background-color: #ffcc00;
+        color: #fff;
+    }
+
+    .btn-info:hover {
+        background-color: #17a2b8;
+        color: #fff;
+    }
+
+    .btn-danger:hover {
+        background-color: #dc3545;
+        color: #fff;
+    }
+</style>

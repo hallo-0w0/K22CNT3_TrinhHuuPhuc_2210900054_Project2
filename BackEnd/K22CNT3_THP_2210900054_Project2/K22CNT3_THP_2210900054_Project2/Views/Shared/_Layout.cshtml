@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <style>
+        /* Basic Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Sidebar CSS */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #343a40;
+            padding-top: 20px;
+            overflow-x: hidden;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+            .sidebar h2 {
+                color: #ffffff;
+                text-align: center;
+                margin-bottom: 20px;
+                font-size: 1.5em;
+            }
+
+            .sidebar a {
+                padding: 10px 15px;
+                text-decoration: none;
+                font-size: 18px;
+                color: #ffffff;
+                display: flex; /* Để biểu tượng và văn bản được căn chỉnh theo hàng */
+                align-items: center; /* Canh giữa theo chiều dọc */
+                transition: background-color 0.3s ease;
+            }
+
+                .sidebar a:hover {
+                    background-color: #575d63;
+                    color: #ffffff;
+                }
+
+                .sidebar a.active {
+                    background-color: #007bff; /* Màu nền cho liên kết đang hoạt động */
+                    color: #ffffff; /* Màu chữ cho liên kết đang hoạt động */
+                }
+
+                .sidebar a i {
+                    margin-right: 10px;
+                }
+
+        .content {
+            margin-left: 260px; /* Width of the sidebar + some space */
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #6c757d;
+        }
+
+            footer a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <a href="@Url.Action("Index", "Home")" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")"><i class='fas fa-home'></i> Home</a>
+        <a href="@Url.Action("Index", "Admin")" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Admin" ? "active" : "")"><i class='fas fa-user-cog'></i> Quản lý tài khoản admin</a>
+        <a href="@Url.Action("Index", "VIDEOs")" class="@(ViewContext.RouteData.Values["controller"].ToString() == "VIDEOs" ? "active" : "")"><i class='fas fa-video'></i> Quản lý video</a>
+        <a href="@Url.Action("Index", "DANH_MUC_VIDEO")" class="@(ViewContext.RouteData.Values["controller"].ToString() == "DANH_MUC_VIDEO" ? "active" : "")"><i class='fas fa-list'></i> Quản lý thể loại video</a>
+        <a href="@Url.Action("Index", "BAO_CAO")" class="@(ViewContext.RouteData.Values["controller"].ToString() == "BAO_CAO" ? "active" : "")"><i class='fas fa-flag'></i> Report</a>
+    </div>
+
+    <div class="content">
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                <p>
+                    Contact us:
+                    <a href="mailto:your-email@gmail.com"><i class="fas fa-envelope"></i> Gmail</a> |
+                    <a href="https://www.facebook.com/your-facebook-page" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

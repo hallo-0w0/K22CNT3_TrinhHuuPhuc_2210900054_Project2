@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="k22CNT3_TrinhHuuPhuc_Project2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BAO_CAO">
+    <Key>
+      <PropertyRef Name="ma_bao_cao" />
+    </Key>
+    <Property Name="ma_bao_cao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="noi_dung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ma_video" Type="Int32" Nullable="false" />
+    <Property Name="ngay_bao_cao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ma_quan_tri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="QUAN_TRI" Relationship="Self.FK__BAO_CAO__ma_quan__571DF1D5" FromRole="BAO_CAO" ToRole="QUAN_TRI" />
+    <NavigationProperty Name="VIDEO" Relationship="Self.FK__BAO_CAO__ma_vide__5629CD9C" FromRole="BAO_CAO" ToRole="VIDEO" />
+  </EntityType>
+  <EntityType Name="DANH_MUC_VIDEO">
+    <Key>
+      <PropertyRef Name="ma_danh_muc" />
+    </Key>
+    <Property Name="ma_danh_muc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ten_danh_muc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mo_ta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="VIDEOs" Relationship="Self.VIDEO_THEO_DANH_MUC" FromRole="DANH_MUC_VIDEO" ToRole="VIDEO" />
+  </EntityType>
+  <EntityType Name="QUAN_TRI">
+    <Key>
+      <PropertyRef Name="tai_khoan" />
+    </Key>
+    <Property Name="tai_khoan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mat_khau" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="trang_thai" Type="Byte" />
+    <NavigationProperty Name="BAO_CAO" Relationship="Self.FK__BAO_CAO__ma_quan__571DF1D5" FromRole="QUAN_TRI" ToRole="BAO_CAO" />
+    <NavigationProperty Name="VIDEOs" Relationship="Self.FK__VIDEO__ma_quan_t__4CA06362" FromRole="QUAN_TRI" ToRole="VIDEO" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="VIDEO">
+    <Key>
+      <PropertyRef Name="ma_video" />
+    </Key>
+    <Property Name="ma_video" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tieu_de" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="mo_ta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="duong_dan" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hinh_anh" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="the_loai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ngay_tao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ma_quan_tri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="trang_thai" Type="Byte" />
+    <NavigationProperty Name="BAO_CAO" Relationship="Self.FK__BAO_CAO__ma_vide__5629CD9C" FromRole="VIDEO" ToRole="BAO_CAO" />
+    <NavigationProperty Name="QUAN_TRI" Relationship="Self.FK__VIDEO__ma_quan_t__4CA06362" FromRole="VIDEO" ToRole="QUAN_TRI" />
+    <NavigationProperty Name="DANH_MUC_VIDEO" Relationship="Self.VIDEO_THEO_DANH_MUC" FromRole="VIDEO" ToRole="DANH_MUC_VIDEO" />
+  </EntityType>
+  <Association Name="FK__BAO_CAO__ma_quan__571DF1D5">
+    <End Role="QUAN_TRI" Type="Self.QUAN_TRI" Multiplicity="0..1" />
+    <End Role="BAO_CAO" Type="Self.BAO_CAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QUAN_TRI">
+        <PropertyRef Name="tai_khoan" />
+      </Principal>
+      <Dependent Role="BAO_CAO">
+        <PropertyRef Name="ma_quan_tri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BAO_CAO__ma_vide__5629CD9C">
+    <End Role="VIDEO" Type="Self.VIDEO" Multiplicity="1" />
+    <End Role="BAO_CAO" Type="Self.BAO_CAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VIDEO">
+        <PropertyRef Name="ma_video" />
+      </Principal>
+      <Dependent Role="BAO_CAO">
+        <PropertyRef Name="ma_video" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VIDEO__ma_quan_t__4CA06362">
+    <End Role="QUAN_TRI" Type="Self.QUAN_TRI" Multiplicity="1" />
+    <End Role="VIDEO" Type="Self.VIDEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QUAN_TRI">
+        <PropertyRef Name="tai_khoan" />
+      </Principal>
+      <Dependent Role="VIDEO">
+        <PropertyRef Name="ma_quan_tri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VIDEO_THEO_DANH_MUC">
+    <End Role="VIDEO" Type="Self.VIDEO" Multiplicity="*" />
+    <End Role="DANH_MUC_VIDEO" Type="Self.DANH_MUC_VIDEO" Multiplicity="0..1" />
+  </Association>
+  <EntityContainer Name="k22CNT3_TrinhHuuPhuc_Project2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BAO_CAO" EntityType="Self.BAO_CAO" />
+    <EntitySet Name="DANH_MUC_VIDEO" EntityType="Self.DANH_MUC_VIDEO" />
+    <EntitySet Name="QUAN_TRI" EntityType="Self.QUAN_TRI" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="VIDEOs" EntityType="Self.VIDEO" />
+    <AssociationSet Name="FK__BAO_CAO__ma_quan__571DF1D5" Association="Self.FK__BAO_CAO__ma_quan__571DF1D5">
+      <End Role="QUAN_TRI" EntitySet="QUAN_TRI" />
+      <End Role="BAO_CAO" EntitySet="BAO_CAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BAO_CAO__ma_vide__5629CD9C" Association="Self.FK__BAO_CAO__ma_vide__5629CD9C">
+      <End Role="VIDEO" EntitySet="VIDEOs" />
+      <End Role="BAO_CAO" EntitySet="BAO_CAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VIDEO__ma_quan_t__4CA06362" Association="Self.FK__VIDEO__ma_quan_t__4CA06362">
+      <End Role="QUAN_TRI" EntitySet="QUAN_TRI" />
+      <End Role="VIDEO" EntitySet="VIDEOs" />
+    </AssociationSet>
+    <AssociationSet Name="VIDEO_THEO_DANH_MUC" Association="Self.VIDEO_THEO_DANH_MUC">
+      <End Role="VIDEO" EntitySet="VIDEOs" />
+      <End Role="DANH_MUC_VIDEO" EntitySet="DANH_MUC_VIDEO" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(k22CNT3_TrinhHuuPhuc_Project2Model.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(k22CNT3_TrinhHuuPhuc_Project2Model.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,217 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header .navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header .navbar ul li a:hover {
+    text-decoration: underline;
+    color: #ffdf40;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-container input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-container button {
+    padding: 10px;
+    background: #ffdf40;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-container button:hover {
+    background: #ffd700;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay Styles */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(110, 199, 226);
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Video Section */
+.video-section {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.video-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Most Popular Section */
+.most-popular-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.most-popular-section h2 {
+    color: #33ff57;
+}
+
+.most-popular-section .video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Most Popular Video Items */
+.most-popular-section .video-item img {
+    width: 100%;
+    height: auto;
+    max-width: 1024px;
+    max-height: 576px;
+    object-fit: cover;
+}
+
+/* Hover effect for video items in Most Popular */
+.most-popular-section .video-item:hover {
+    transform: scale(1.05);
+}
+
+/* Categories and Popular Sections */
+.categorie-section, .most-popular-section, .last-add-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.categorie-grid, .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Item Styles */
+.categorie-item, .video-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.categorie-item img, .video-item img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.categorie-item:hover, .video-item:hover {
+    transform: scale(1.05);
+}
+
+/* Màu chữ cho tiêu đề trong phần Popular Categories */
+.categorie-section h2 {
+    color: #ffffff; 
+}
+
+/* Màu chữ cho tiêu đề trong phần Most Popular */
+.most-popular-section h2 {
+    color: #ffffff;
+}
+
+/* Màu chữ cho tiêu đề trong phần Last Add */
+.last-add-section h2 {
+    color: #ffffff; 
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #4e54c8;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

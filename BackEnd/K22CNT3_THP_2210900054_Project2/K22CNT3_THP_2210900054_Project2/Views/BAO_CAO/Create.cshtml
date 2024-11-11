@@ -1,0 +1,108 @@
+﻿@model K22CNT3_THP_2210900054_Project2.Models.BAO_CAO
+
+@{
+    ViewBag.Title = "Tạo Mới Báo Cáo";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">Tạo Mới Báo Cáo</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Thông Tin Báo Cáo</h4>
+            </div>
+            <div class="card-body">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.noi_dung, "Nội dung", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.noi_dung, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập nội dung báo cáo" } })
+                        @Html.ValidationMessageFor(model => model.noi_dung, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ma_video, "Mã Video", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.DropDownList("ma_video", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ma_video, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ngay_bao_cao, "Ngày báo cáo", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.ngay_bao_cao, new { htmlAttributes = new { @class = "form-control", type = "date" } }) <!-- Sử dụng loại ngày -->
+                        @Html.ValidationMessageFor(model => model.ngay_bao_cao, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ma_quan_tri, "Mã Quản Trị", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.DropDownList("ma_quan_tri", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ma_quan_tri, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <input type="submit" value="Tạo Mới" class="btn btn-primary" style="border-radius: 25px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="mt-3">
+        @Html.ActionLink("Trở Về Danh Sách", "Index", null, new { @class = "btn btn-outline-secondary" })
+    </div>
+</div>
+
+<style>
+    .card {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .form-control {
+        border-radius: 25px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+
+    h2 {
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-1px);
+        }
+
+    .btn-outline-secondary {
+        border-color: #6c757d;
+        color: #6c757d;
+    }
+
+        .btn-outline-secondary:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+</style>

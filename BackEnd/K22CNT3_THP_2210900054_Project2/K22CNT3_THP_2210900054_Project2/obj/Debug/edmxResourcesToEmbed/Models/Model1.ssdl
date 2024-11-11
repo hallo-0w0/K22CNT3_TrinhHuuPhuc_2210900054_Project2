@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="k22CNT3_TrinhHuuPhuc_Project2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BAO_CAO">
+    <Key>
+      <PropertyRef Name="ma_bao_cao" />
+    </Key>
+    <Property Name="ma_bao_cao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="noi_dung" Type="text" Nullable="false" />
+    <Property Name="ma_video" Type="int" Nullable="false" />
+    <Property Name="ngay_bao_cao" Type="datetime" Nullable="false" />
+    <Property Name="ma_quan_tri" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DANH_MUC_VIDEO">
+    <Key>
+      <PropertyRef Name="ma_danh_muc" />
+    </Key>
+    <Property Name="ma_danh_muc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_danh_muc" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="mo_ta" Type="text" />
+  </EntityType>
+  <EntityType Name="QUAN_TRI">
+    <Key>
+      <PropertyRef Name="tai_khoan" />
+    </Key>
+    <Property Name="tai_khoan" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mat_khau" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="trang_thai" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="VIDEO">
+    <Key>
+      <PropertyRef Name="ma_video" />
+    </Key>
+    <Property Name="ma_video" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tieu_de" Type="varchar" MaxLength="100" />
+    <Property Name="mo_ta" Type="text" />
+    <Property Name="duong_dan" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="hinh_anh" Type="varchar" MaxLength="255" />
+    <Property Name="the_loai" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ngay_tao" Type="datetime" Nullable="false" />
+    <Property Name="ma_quan_tri" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="trang_thai" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="VIDEO_THEO_DANH_MUC">
+    <Key>
+      <PropertyRef Name="ma_video" />
+    </Key>
+    <Property Name="video_ma_danh_muc" Type="int" Nullable="false" />
+    <Property Name="ma_video" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__BAO_CAO__ma_quan__571DF1D5">
+    <End Role="QUAN_TRI" Type="Self.QUAN_TRI" Multiplicity="0..1" />
+    <End Role="BAO_CAO" Type="Self.BAO_CAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QUAN_TRI">
+        <PropertyRef Name="tai_khoan" />
+      </Principal>
+      <Dependent Role="BAO_CAO">
+        <PropertyRef Name="ma_quan_tri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BAO_CAO__ma_vide__5629CD9C">
+    <End Role="VIDEO" Type="Self.VIDEO" Multiplicity="1" />
+    <End Role="BAO_CAO" Type="Self.BAO_CAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VIDEO">
+        <PropertyRef Name="ma_video" />
+      </Principal>
+      <Dependent Role="BAO_CAO">
+        <PropertyRef Name="ma_video" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VIDEO__ma_quan_t__4CA06362">
+    <End Role="QUAN_TRI" Type="Self.QUAN_TRI" Multiplicity="1" />
+    <End Role="VIDEO" Type="Self.VIDEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QUAN_TRI">
+        <PropertyRef Name="tai_khoan" />
+      </Principal>
+      <Dependent Role="VIDEO">
+        <PropertyRef Name="ma_quan_tri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VIDEO_THE__ma_vi__534D60F1">
+    <End Role="VIDEO" Type="Self.VIDEO" Multiplicity="1" />
+    <End Role="VIDEO_THEO_DANH_MUC" Type="Self.VIDEO_THEO_DANH_MUC" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="VIDEO">
+        <PropertyRef Name="ma_video" />
+      </Principal>
+      <Dependent Role="VIDEO_THEO_DANH_MUC">
+        <PropertyRef Name="ma_video" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VIDEO_THE__video__52593CB8">
+    <End Role="DANH_MUC_VIDEO" Type="Self.DANH_MUC_VIDEO" Multiplicity="1" />
+    <End Role="VIDEO_THEO_DANH_MUC" Type="Self.VIDEO_THEO_DANH_MUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DANH_MUC_VIDEO">
+        <PropertyRef Name="ma_danh_muc" />
+      </Principal>
+      <Dependent Role="VIDEO_THEO_DANH_MUC">
+        <PropertyRef Name="video_ma_danh_muc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="k22CNT3_TrinhHuuPhuc_Project2ModelStoreContainer">
+    <EntitySet Name="BAO_CAO" EntityType="Self.BAO_CAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DANH_MUC_VIDEO" EntityType="Self.DANH_MUC_VIDEO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QUAN_TRI" EntityType="Self.QUAN_TRI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VIDEO" EntityType="Self.VIDEO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VIDEO_THEO_DANH_MUC" EntityType="Self.VIDEO_THEO_DANH_MUC" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BAO_CAO__ma_quan__571DF1D5" Association="Self.FK__BAO_CAO__ma_quan__571DF1D5">
+      <End Role="QUAN_TRI" EntitySet="QUAN_TRI" />
+      <End Role="BAO_CAO" EntitySet="BAO_CAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BAO_CAO__ma_vide__5629CD9C" Association="Self.FK__BAO_CAO__ma_vide__5629CD9C">
+      <End Role="VIDEO" EntitySet="VIDEO" />
+      <End Role="BAO_CAO" EntitySet="BAO_CAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VIDEO__ma_quan_t__4CA06362" Association="Self.FK__VIDEO__ma_quan_t__4CA06362">
+      <End Role="QUAN_TRI" EntitySet="QUAN_TRI" />
+      <End Role="VIDEO" EntitySet="VIDEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VIDEO_THE__ma_vi__534D60F1" Association="Self.FK__VIDEO_THE__ma_vi__534D60F1">
+      <End Role="VIDEO" EntitySet="VIDEO" />
+      <End Role="VIDEO_THEO_DANH_MUC" EntitySet="VIDEO_THEO_DANH_MUC" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VIDEO_THE__video__52593CB8" Association="Self.FK__VIDEO_THE__video__52593CB8">
+      <End Role="DANH_MUC_VIDEO" EntitySet="DANH_MUC_VIDEO" />
+      <End Role="VIDEO_THEO_DANH_MUC" EntitySet="VIDEO_THEO_DANH_MUC" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

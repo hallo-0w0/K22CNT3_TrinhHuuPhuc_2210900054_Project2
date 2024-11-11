@@ -1,0 +1,57 @@
+﻿@model IEnumerable<K22CNT3_THP_2210900054_Project2.Models.BAO_CAO>
+
+@{
+    ViewBag.Title = "Danh Sách Báo Cáo";
+}
+
+<h2 class="text-center text-primary mb-4">Danh Sách Báo Cáo</h2>
+
+<p>
+    @Html.ActionLink("Tạo Mới", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <th>               
+                Nội Dung
+            </th>
+            <th>
+                Ngày Báo Cáo
+            </th>
+            <th>
+                Mật Khẩu Quản Trị
+            </th>
+            <th>
+                Tiêu Đề Video
+            </th>
+            <th>
+               Thao Tác
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.noi_dung)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ngay_bao_cao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QUAN_TRI.mat_khau)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VIDEO.tieu_de)
+                </td>
+                <td>
+                    @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = item.ma_bao_cao }, new { @class = "btn btn-warning btn-sm" }) |
+                    @Html.ActionLink("Chi Tiết", "Details", new { id = item.ma_bao_cao }, new { @class = "btn btn-info btn-sm" }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.ma_bao_cao }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

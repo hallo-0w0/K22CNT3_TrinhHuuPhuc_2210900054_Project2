@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Admin Dashboard - Anime Twixtor";
+}
+
+<div class="container-fluid">
+    <h1 class="text-center mb-4">Dashboard Quản Trị Viên</h1>
+
+    <div class="row mt-4 justify-content-center">
+        <!-- Thêm 'justify-content-center' để căn giữa -->
+        <section class="col-md-4 mb-4">
+            <div class="card text-center hover-shadow">
+                <div class="card-header bg-warning text-white">
+                    <h5>Quản Lý Thể Loại Video</h5>
+                </div>
+                <div class="card-body">
+                    <img src="https://via.placeholder.com/100" alt="Quản Lý Thể Loại" class="mb-3">
+                    <p class="card-text">Thêm, sửa hoặc xóa thể loại video.</p>
+                    <a href="/DANH_MUC_VIDEO" class="btn btn-outline-warning" title="Truy cập trang quản lý thể loại">Quản lý thể loại &raquo;</a>
+                </div>
+            </div>
+        </section> 
+
+        <section class="col-md-4 mb-4">
+            <div class="card text-center hover-shadow">
+                <div class="card-header bg-danger text-white">
+                    <h5>Báo Cáo</h5>
+                </div>
+                <div class="card-body">
+                    <img src="https://via.placeholder.com/100" alt="Báo Cáo" class="mb-3">
+                    <p class="card-text">Xem báo cáo về hoạt động trên trang.</p>
+                    <a href="/BAO_CAO" class="btn btn-outline-danger" title="Truy cập trang báo cáo">Xem báo cáo &raquo;</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="row mt-4 justify-content-center">
+        <!-- Thêm 'justify-content-center' để căn giữa -->
+        <section class="col-md-4 mb-4">
+            <div class="card text-center hover-shadow">
+                <div class="card-header bg-info text-white">
+                    <h5>Quản Lý Tài Khoản Admin</h5>
+                </div>
+                <div class="card-body">
+                    <img src="https://via.placeholder.com/100" alt="Quản Lý Tài Khoản" class="mb-3">
+                    <p class="card-text">Thêm, sửa hoặc xóa tài khoản admin.</p>
+                    <a href="/Admin" class="btn btn-outline-info" title="Truy cập trang quản lý tài khoản">Quản lý tài khoản &raquo;</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-md-4 mb-4">
+            <div class="card text-center hover-shadow">
+                <div class="card-header bg-success text-white">
+                    <h5>Quản Lý Video</h5>
+                </div>
+                <div class="card-body">
+                    <img src="https://via.placeholder.com/100" alt="Quản Lý Video" class="mb-3">
+                    <p class="card-text">Thêm, sửa hoặc xóa video từ cơ sở dữ liệu.</p>
+                    <a href="/VIDEOs" class="btn btn-outline-success" title="Truy cập trang quản lý video">Quản lý video &raquo;</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<style>
+    .hover-shadow {
+        transition: box-shadow 0.3s;
+        border-radius: 8px; /* Thêm bo góc cho thẻ */
+    }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+    img {
+        width: 80px; /* Kích thước nhỏ hơn để tạo cảm giác gọn gàng */
+        height: auto;
+    }
+
+    .card {
+        border: 1px solid #dee2e6; /* Thêm viền cho thẻ */
+        border-radius: 8px; /* Bo góc thẻ */
+    }
+
+    .card-header {
+        border-bottom: 2px solid rgba(0,0,0,0.1); /* Thêm đường viền dưới cho header */
+    }
+
+    h1 {
+        font-weight: bold;
+    }
+
+    .card-text {
+        margin-bottom: 1rem; /* Tăng khoảng cách dưới đoạn văn bản */
+    }
+
+    .btn {
+        margin-top: 1rem; /* Tăng khoảng cách trên nút */
+    }
+</style>

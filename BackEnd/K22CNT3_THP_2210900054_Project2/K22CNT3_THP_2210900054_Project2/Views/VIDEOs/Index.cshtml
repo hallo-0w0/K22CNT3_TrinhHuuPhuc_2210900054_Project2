@@ -1,0 +1,78 @@
+﻿@model IEnumerable<K22CNT3_THP_2210900054_Project2.Models.VIDEO>
+
+@{
+    ViewBag.Title = "Danh Sách Video";
+}
+
+<h2>Danh Sách Video</h2>
+
+<p>
+    @Html.ActionLink("Tạo Video Mới", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th>Tiêu Đề</th>
+            <th>Mô Tả</th>
+            <th>Đường Dẫn</th>
+            <th>Hình Ảnh</th>
+            <th>Thể Loại</th>
+            <th>Ngày Tạo</th>
+            <th>Trạng Thái</th>
+            <th>Mật Khẩu</th>
+            <th>Thao Tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.tieu_de)</td>
+                <td>@Html.DisplayFor(modelItem => item.mo_ta)</td>
+                <td>@Html.DisplayFor(modelItem => item.duong_dan)</td>
+                <td>
+                    <img src="@item.hinh_anh" alt="@item.tieu_de" style="width:100px;height:auto;" />
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.the_loai)</td>
+                <td>@Html.DisplayFor(modelItem => item.ngay_tao)</td>
+                <td>@Html.DisplayFor(modelItem => item.trang_thai)</td>
+                <td>@Html.DisplayFor(modelItem => item.QUAN_TRI.mat_khau)</td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.ma_video }, new { @class = "btn btn-warning btn-sm" }) |
+                    @Html.ActionLink("Chi Tiết", "Details", new { id = item.ma_video }, new { @class = "btn btn-info btn-sm" }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.ma_video }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    /* CSS tùy chỉnh */
+    table {
+        border-collapse: collapse; /* Gộp các đường viền */
+        width: 100%; /* Chiếm toàn bộ chiều rộng */
+        margin-top: 20px; /* Khoảng cách phía trên */
+    }
+
+    th, td {
+        text-align: center; /* Canh giữa nội dung */
+        vertical-align: middle; /* Canh giữa theo chiều dọc */
+        padding: 10px; /* Khoảng cách bên trong các ô */
+    }
+
+    th {
+        background-color: #f8f9fa; /* Nền sáng cho tiêu đề */
+        font-weight: bold; /* Chữ đậm cho tiêu đề */
+    }
+
+    img {
+        border-radius: 5px; /* Bo góc ảnh */
+        border: 1px solid #ddd; /* Đường viền cho ảnh */
+    }
+
+    .btn {
+        margin: 2px; /* Khoảng cách giữa các nút */
+    }
+</style>

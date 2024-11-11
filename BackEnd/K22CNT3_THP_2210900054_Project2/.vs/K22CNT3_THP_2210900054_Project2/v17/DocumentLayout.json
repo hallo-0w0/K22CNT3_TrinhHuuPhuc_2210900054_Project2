@@ -1,0 +1,110 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\Phuc\\K22CNT3-TTC\u0110-Trinh_Huu_Phuc-2210900054\\BackEnd3\\K22CNT3_THP_2210900054_Project2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4786FA5-26AE-49CE-B785-6A6E52E7FA4F}|K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2.csproj|d:\\th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\phuc\\k22cnt3-ttc\u0111-trinh_huu_phuc-2210900054\\backend3\\k22cnt3_thp_2210900054_project2\\k22cnt3_thp_2210900054_project2\\views\\videos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4786FA5-26AE-49CE-B785-6A6E52E7FA4F}|K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2.csproj|solutionrelative:k22cnt3_thp_2210900054_project2\\views\\videos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4786FA5-26AE-49CE-B785-6A6E52E7FA4F}|K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2.csproj|d:\\th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\phuc\\k22cnt3-ttc\u0111-trinh_huu_phuc-2210900054\\backend3\\k22cnt3_thp_2210900054_project2\\k22cnt3_thp_2210900054_project2\\controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4786FA5-26AE-49CE-B785-6A6E52E7FA4F}|K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2.csproj|solutionrelative:k22cnt3_thp_2210900054_project2\\controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4786FA5-26AE-49CE-B785-6A6E52E7FA4F}|K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2.csproj|d:\\th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\phuc\\k22cnt3-ttc\u0111-trinh_huu_phuc-2210900054\\backend3\\k22cnt3_thp_2210900054_project2\\k22cnt3_thp_2210900054_project2\\views\\videos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4786FA5-26AE-49CE-B785-6A6E52E7FA4F}|K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2.csproj|solutionrelative:k22cnt3_thp_2210900054_project2\\views\\videos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4786FA5-26AE-49CE-B785-6A6E52E7FA4F}|K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2.csproj|d:\\th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\phuc\\k22cnt3-ttc\u0111-trinh_huu_phuc-2210900054\\backend3\\k22cnt3_thp_2210900054_project2\\k22cnt3_thp_2210900054_project2\\views\\bao_cao\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4786FA5-26AE-49CE-B785-6A6E52E7FA4F}|K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2.csproj|solutionrelative:k22cnt3_thp_2210900054_project2\\views\\bao_cao\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4786FA5-26AE-49CE-B785-6A6E52E7FA4F}|K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2.csproj|D:\\Th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\Phuc\\K22CNT3-TTC\u0110-Trinh_Huu_Phuc-2210900054\\BackEnd3\\K22CNT3_THP_2210900054_Project2\\k22cnt3_thp_2210900054_project2\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4786FA5-26AE-49CE-B785-6A6E52E7FA4F}|K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2.csproj|solutionrelative:k22cnt3_thp_2210900054_project2\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\Phuc\\K22CNT3-TTC\u0110-Trinh_Huu_Phuc-2210900054\\BackEnd3\\K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "K22CNT3_THP_2210900054_Project2\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\Phuc\\K22CNT3-TTC\u0110-Trinh_Huu_Phuc-2210900054\\BackEnd3\\K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "K22CNT3_THP_2210900054_Project2\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAUwGwAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-01T20:50:07.046Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VIDEOsController.cs",
+              "DocumentMoniker": "D:\\Th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\Phuc\\K22CNT3-TTC\u0110-Trinh_Huu_Phuc-2210900054\\BackEnd3\\K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2\\Controllers\\VIDEOsController.cs",
+              "RelativeDocumentMoniker": "K22CNT3_THP_2210900054_Project2\\Controllers\\VIDEOsController.cs",
+              "ToolTip": "D:\\Th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\Phuc\\K22CNT3-TTC\u0110-Trinh_Huu_Phuc-2210900054\\BackEnd3\\K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2\\Controllers\\VIDEOsController.cs",
+              "RelativeToolTip": "K22CNT3_THP_2210900054_Project2\\Controllers\\VIDEOsController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABcAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T18:17:16.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\Phuc\\K22CNT3-TTC\u0110-Trinh_Huu_Phuc-2210900054\\BackEnd3\\K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2\\Views\\VIDEOs\\Index.cshtml",
+              "RelativeDocumentMoniker": "K22CNT3_THP_2210900054_Project2\\Views\\VIDEOs\\Index.cshtml",
+              "ToolTip": "D:\\Th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\Phuc\\K22CNT3-TTC\u0110-Trinh_Huu_Phuc-2210900054\\BackEnd3\\K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2\\Views\\VIDEOs\\Index.cshtml",
+              "RelativeToolTip": "K22CNT3_THP_2210900054_Project2\\Views\\VIDEOs\\Index.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAABIAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T20:30:31.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\Phuc\\K22CNT3-TTC\u0110-Trinh_Huu_Phuc-2210900054\\BackEnd3\\K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2\\Views\\BAO_CAO\\Edit.cshtml",
+              "RelativeDocumentMoniker": "K22CNT3_THP_2210900054_Project2\\Views\\BAO_CAO\\Edit.cshtml",
+              "ToolTip": "D:\\Th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\Phuc\\K22CNT3-TTC\u0110-Trinh_Huu_Phuc-2210900054\\BackEnd3\\K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2\\Views\\BAO_CAO\\Edit.cshtml",
+              "RelativeToolTip": "K22CNT3_THP_2210900054_Project2\\Views\\BAO_CAO\\Edit.cshtml",
+              "ViewState": "AQIAABkAAAAAAAAAAAAYwCoAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T20:15:54.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\Phuc\\K22CNT3-TTC\u0110-Trinh_Huu_Phuc-2210900054\\BackEnd3\\K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2\\Views\\VIDEOs\\Edit.cshtml",
+              "RelativeDocumentMoniker": "K22CNT3_THP_2210900054_Project2\\Views\\VIDEOs\\Edit.cshtml",
+              "ToolTip": "D:\\Th\u1EF1c t\u1EADp chuy\u00EAn \u0111\u1EC1 1\\Phuc\\K22CNT3-TTC\u0110-Trinh_Huu_Phuc-2210900054\\BackEnd3\\K22CNT3_THP_2210900054_Project2\\K22CNT3_THP_2210900054_Project2\\Views\\VIDEOs\\Edit.cshtml",
+              "RelativeToolTip": "K22CNT3_THP_2210900054_Project2\\Views\\VIDEOs\\Edit.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAuwDAAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T20:15:44.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

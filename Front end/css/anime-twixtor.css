@@ -1,0 +1,174 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-image: url('../images/AnimeTwixtor.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header .navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header .navbar ul li a:hover {
+    text-decoration: underline;
+    color: #ffdf40;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-container input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-container button {
+    padding: 10px;
+    background: #ffdf40;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-container button:hover {
+    background: #ffd700;
+}
+
+/* Anime Twixtor Section */
+.categorie-section {
+    padding: 50px 0;
+    text-align: center;
+    margin-bottom: 0; 
+}
+
+.categorie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.categorie-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin: 0; /* Loại bỏ margin dư thừa */
+}
+
+.categorie-item img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.categorie-item p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.categorie-item:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Các phần bổ sung thêm */
+
+.categorie-section {
+    margin-bottom: 20px; 
+}
+
+.categorie-grid {
+    grid-template-columns: repeat(3, 1fr); 
+}
+
+.categorie-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0; 
+}
+
+.categorie-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.categorie-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+h2 {
+    font-size: 28px;
+    color: #444;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #4e54c8;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

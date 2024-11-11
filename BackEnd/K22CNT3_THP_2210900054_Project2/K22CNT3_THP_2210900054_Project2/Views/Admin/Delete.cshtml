@@ -1,0 +1,68 @@
+﻿@model K22CNT3_THP_2210900054_Project2.Models.QUAN_TRI
+
+@{
+    ViewBag.Title = "Xóa Tài Khoản";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-danger">Xóa Tài Khoản</h2>
+
+    <div class="alert alert-warning">
+        <h4 class="alert-heading">Bạn có chắc chắn muốn xóa tài khoản này?</h4>
+        <p>Hành động này sẽ không thể khôi phục lại.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header bg-danger text-white">
+            <h4 class="mb-0">Thông Tin Tài Khoản</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Tài khoản</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.tai_khoan)</dd>
+
+                <dt class="col-sm-3">Mật Khẩu</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.mat_khau)</dd>
+
+                <dt class="col-sm-3">Trạng Thái</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.trang_thai)</dd>
+            </dl>
+        </div>
+        <div class="card-footer text-right">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-danger" style="border-radius: 25px;">
+                    <i class="fas fa-trash"></i> Xóa
+                </button>
+                <a href="@Url.Action("Index", "Admin")" class="btn btn-outline-secondary" style="border-radius: 25px; margin-left: 10px;">
+                    <i class="fas fa-arrow-left"></i> Trở Về Danh Sách
+                </a>
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .alert {
+        border-radius: 10px;
+    }
+
+    .btn {
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+</style>
